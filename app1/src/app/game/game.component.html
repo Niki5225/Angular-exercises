@@ -1,0 +1,13 @@
+<input placeholder="Search for a game" [ngModel]="searchText" (ngModelChange)="searchText = $event">
+
+Searched value: {{searchText}}
+
+<ul>
+    <li *ngFor="let game of games">
+        <game-item [game]="game"></game-item>
+    </li>
+</ul>
+
+<button (click)="handleExpandContent()">
+    {{shouldColorChange ? 'Make price black': 'Make price purple'}}
+</button>
